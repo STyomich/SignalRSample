@@ -18,6 +18,15 @@ public class HomeController : Controller
         return View();
     }
 
+    public async Task<IActionResult> DeathlyHallows(string type)
+    {
+        if (SD.DealthyHallowRace.ContainsKey(type))
+        {
+            SD.DealthyHallowRace[type]++;
+        }
+        return Accepted();
+    }
+
     public IActionResult Privacy()
     {
         return View();
